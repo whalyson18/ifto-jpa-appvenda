@@ -30,6 +30,7 @@ public class ItemVenda implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter @Getter private int id;
+    private Produto produto;
     @Setter @Getter private double quantidade;
     
     @ManyToOne
@@ -37,4 +38,5 @@ public class ItemVenda implements Serializable {
     private Venda venda;
     
 }
+//https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example
 

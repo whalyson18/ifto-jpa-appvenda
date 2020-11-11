@@ -33,6 +33,6 @@ public class Venda implements Serializable {
     @Setter @Getter private int id;
     @Setter @Getter private Date data;
     
-    @OneToMany(mappedBy = "venda")
-    @Setter @Getter private List<ItemVenda> itemVenda;
+    @ManyToMany(mappedBy = "vendas")
+    @Setter @Getter private List<Produto> produtos=new ArrayList();
 }

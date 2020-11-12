@@ -6,15 +6,12 @@
 package com.whalyson.AppVenda.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,9 +31,4 @@ public class Produto implements Serializable {
     @Setter @Getter private String descricao;
     @Setter @Getter private double valor;
     
-    @ManyToMany
-    @JoinTable(name = "produto_venda",
-    joinColumns = @JoinColumn(name = "id_produto"),
-    inverseJoinColumns = @JoinColumn(name = "id_venda"))
-    @Setter @Getter private List<Venda> vendas=new ArrayList();
 }

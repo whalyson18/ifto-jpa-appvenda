@@ -6,12 +6,14 @@
 package com.whalyson.AppVenda.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -30,12 +32,12 @@ public class ItemVenda implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter @Getter private int id;
-    private Produto produto;
     @Setter @Getter private double quantidade;
     
     @ManyToOne
     @JoinColumn(name = "id_venda")
-    private Venda venda;
+    @Setter @Getter private Venda venda;
+
     
 }
 //https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example

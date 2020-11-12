@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -33,6 +32,6 @@ public class Venda implements Serializable {
     @Setter @Getter private int id;
     @Setter @Getter private Date data;
     
-    @ManyToMany(mappedBy = "vendas")
-    @Setter @Getter private List<Produto> produtos=new ArrayList();
+    @OneToMany(mappedBy = "venda")
+    @Setter @Getter private List<ItemVenda> itemVenda;
 }

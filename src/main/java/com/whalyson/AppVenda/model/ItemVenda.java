@@ -32,11 +32,10 @@ public class ItemVenda implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter @Getter private int id;
+    @OneToOne
+    @Setter @Getter private Produto produto;
     @Setter @Getter private double quantidade;
     
-    @ManyToOne
-    @JoinColumn(name = "id_venda")
-    @Setter @Getter private Venda venda;
 
     
 }
